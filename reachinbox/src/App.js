@@ -5,15 +5,13 @@ import Login from './Component/Login';
 import Navbar from './Component/Navbar';
 import Dashboard from './Dashboard/Dashboard';
 import DarkModeToggle from './Theam/Theam';
+import Allroutes from './router/Allroutes';
 
 function App() {
   return (
     <div className="App">
-    <h1 className='bg-black'>ReachInbox</h1>
-    <DarkModeToggle/>
-    <Navbar/>
-   {/* <Login/> */}
-   <Dashboard/>
+    {/* <h1 className='bg-black'>ReachInbox</h1> */}
+ <Allroutes/>
     </div>
   );
 }

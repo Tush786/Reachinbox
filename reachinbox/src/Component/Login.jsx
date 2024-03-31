@@ -7,7 +7,7 @@ function Login() {
 
 async  function HandleGoogle(){
     try {
-      let resp=await axios.post(`https://hiring.reachinbox.xyz/api/v1/auth/google-login`)
+      let resp=await axios.get(`https://hiring.reachinbox.xyz/api/v1/auth/google-login`)
       console.log(resp)
     } catch (error) {
        console.log(error)

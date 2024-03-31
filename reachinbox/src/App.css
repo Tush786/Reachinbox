@@ -39,3 +39,8 @@
     transform: rotate(360deg);
   }
 }
+
+.Icon{
+  width: 25px;
+  height: 25px;
+}
