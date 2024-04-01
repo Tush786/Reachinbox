@@ -14,7 +14,7 @@ function DarkModeToggle() {
 	};
 
 	return (
-		<div>
+		<div className='border-2 px-4 py-1 rounded-[25px] border-grey-500'>
 			<DarkModeSwitch
 				className='ml-5'
 				onChange={toggleDarkMode}

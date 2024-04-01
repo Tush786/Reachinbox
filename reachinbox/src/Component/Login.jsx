@@ -6,8 +6,15 @@ import axios from 'axios'
 function Login() {
 
 async  function HandleGoogle(){
+  const token = "reuiureiunoirvfno67784899";
+  const config = {
+    headers: {
+      Authorization: "Bearer " + token,
+    },
+  };
+  
     try {
-      let resp=await axios.get(`https://hiring.reachinbox.xyz/api/v1/auth/google-login`)
+      let resp=await axios.get(`https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=https://frontend.com`,config)
       console.log(resp)
     } catch (error) {
        console.log(error)
