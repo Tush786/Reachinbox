@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
     {/* <h1 className='bg-black'>ReachInbox</h1> */}
-    <Navbar/>
+    {/* <Navbar/> */}
  <Allroutes/>
     </div>
   );
