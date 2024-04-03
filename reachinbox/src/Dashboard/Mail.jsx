@@ -12,7 +12,7 @@ import { HiOutlineMailOpen } from "react-icons/hi";
 
 function Mail() {
   return (
-    <div className="flex">
+    <div className="flex ">
       <div className="w-[300px] h-screen flex flex-col border-r-2 pr-6 ml-4 border-[#291c1c]">
         <div className="flex w-[278px] mt-2">
           <div className="w-[100%] h-[71px] pt-[7px] gap-4 ">
