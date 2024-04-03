@@ -1,8 +1,10 @@
 import { AbsoluteCenter, Box, Button, Divider, Text } from '@chakra-ui/react'
 import React from 'react'
+import { useState } from 'react';
 import { BsReply } from "react-icons/bs";
 
 function NewProduct() {
+    const [signlemail,setSinglemail]=useState()
   return (
     <div className='w-[96%] m-auto '>
     <Box position='relative' className='my-4' padding='10'>

@@ -18,7 +18,7 @@ async  function HandleGoogle(){
  
     <Text className='text-[20px] font-[600] text-center'>Create a new account</Text>
     <div  className='flex w-[300px] m-auto justify-center gap-4 items-center px-2 py-2 my-6 border-solid border-2 cursor-pointer rounded-md border-[#4d3939]'>
-    <a href='https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=https://reachinbox-flame.vercel.app/dashboard'>
+    <a href='https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=https://reachinbox-three.vercel.app/dashboard'>
     <div onClick={HandleGoogle}>
     <FcGoogle  />
     </div>
