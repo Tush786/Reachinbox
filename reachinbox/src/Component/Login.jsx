@@ -8,13 +8,6 @@ function Login() {
 
 async  function HandleGoogle(){
 
-  
-    // try {
-    //   let resp=await axios.get(`https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=https://reachinbox-five.vercel.app`)
-    //   console.log(resp)
-    // } catch (error) {
-    //    console.log(error)
-    // }
   }
   return (
     <>
