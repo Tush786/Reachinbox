@@ -4,11 +4,11 @@ A MERN application for basic tasks management.
 <h1>Landing Page</h1>
 <a href="https://ibb.co/GMwvG4f"><img src="https://i.ibb.co/94X9Bkm/Capture-1.png" alt="Capture-1" border="0"></a>
 
-<h1>Dashboard</h1>
-<a href="https://ibb.co/GMwvG4f"><img src="https://i.ibb.co/94X9Bkm/Capture-1.png" alt="Capture-1" border="0"></a>
-
 <h1>Dashboard with fuctionality</h1>
-<a href="https://ibb.co/GMwvG4f"><img src="https://i.ibb.co/94X9Bkm/Capture-1.png" alt="Capture-1" border="0"></a>
+<a href="https://ibb.co/826HKMm"><img src="https://i.ibb.co/TRmsvcw/Capture3.png" alt="Capture3" border="0"></a>
+
+<h1>Dashboard</h1>
+<a href="https://ibb.co/PNmcDqt"><img src="https://i.ibb.co/Ms2cBF9/Capture2.png" alt="Capture2" border="0"></a><br /><a target='_blank' href='https://dedupelist.com/'>remove duplicate email addresses</a><br />
 
 
 ## Table of Contents
