@@ -9,10 +9,54 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import { BsThreeDots } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
 import { HiOutlineMailOpen } from "react-icons/hi";
+import { useEffect, useState } from "react";
+import Emailcard from "./Emailcard";
+import axios from "axios";
+import NewProduct from "./NewProduct";
 
 function Mail() {
+
+  const [month, setMonth] = useState("");
+  const [day, setDay] = useState("");
+
+
+  const [arr, setArr] = useState([]);
+  // const theam = useSelector((state) => state.theam.theam);
+  // console.log(theam);
+
+  const token =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImVtYWlsIjoidHVzaGFyc2FwYXRlMzRAZ21haWwuY29tIiwiaWQiOjMyLCJmaXJzdE5hbWUiOiJUdXNoYXIiLCJsYXN0TmFtZSI6IlNhcGF0ZSJ9LCJpYXQiOjE3MTE5NzI0OTQsImV4cCI6MTc0MzUwODQ5NH0.vK5jGzfQEPnoGXjuvPLYA9sRUpmv6uriFCD-9ZAcc3M";
+  // if(!token){
+  //   return
+  // }
+  const config = {
+    headers: {
+      Authorization: "Bearer " + token,
+    },
+  };
+
+  async function FetchData() {
+    try {
+      let Resp = await axios.get(
+        `https://hiring.reachinbox.xyz/api/v1/onebox/list`,
+        config
+      );
+      console.log(Resp.data);
+      setArr(Resp.data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    FetchData();
+  }, []);
+
+
+
   return (
     <div className="flex ">
+   
       <div className="w-[300px] h-screen flex flex-col border-r-2 pr-6 ml-4 border-[#291c1c]">
         <div className="flex w-[278px] mt-2">
           <div className="w-[100%] h-[71px] pt-[7px] gap-4 ">
@@ -74,200 +118,16 @@ function Mail() {
         </div>
 
         {/* --------------------- */}
-        <div className="w-[278px] h-auto px-[9px] ">
-          <div className="w-[255px] border-b-2 border-[#291c1c] h-[100px] py-[12px] px-[8px]">
-            <div className="w-[247px] h-[76px] p-[4px] gap-[8px]">
-              <div className="w-[243px] h-[68px] gap-[8px]">
-                <div className="w-[243px] h-[40px]">
-                  <div className="flex justify-between items-center">
-                    <div className="flex justify-between items-center gap-2 ">
-                      <div className="w-[10px] h-[10px] ml-[-18px] bg-[#6464f1] rounded-full"></div>
-                      <Text className="text-[14px] font-[500]">
-                        Beata@gmail.com
-                      </Text>
-                    </div>
-
-                    <Text>MAR-7</Text>
-                  </div>
-                  <Text className="text-left ">I've tried a lot and </Text>
-                </div>
-                <div className="w-[100%]  my-4 flex justify-between items-center">
-                  <div className="w-[83px] bg-[#222426] rounded-[20px] h-[20px] py-[3px] px-[8px]">
-                    <div className="w-[67px] h-[14px] gap-[4px] flex justify-center items-center">
-                      <div className="w-[12px] h-[12px] rounde-[50px] bg-[#57E0A6] rounded-full"></div>
-                      <Text className="text-[10px] text-left font-[800] text-[#57E0A6]">
-                        Interested
-                      </Text>
-                    </div>
-                  </div>
-                  <div className="py-[3px] px-[8px]  bg-[#222426] rounded-[20px] gap-[8px]">
-                    <div className="w-[100%] h-[14px] gap-2 flex justify-center items-center">
-                      <BsSend />
-                      <Text className="text-[10px] font-[800]">
-                        Campaign Name
-                      </Text>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="w-[255px] border-b-2 border-[#291c1c] h-[100px] py-[12px] px-[8px]">
-            <div className="w-[247px] h-[76px] p-[4px] gap-[8px]">
-              <div className="w-[243px] h-[68px] gap-[8px]">
-                <div className="w-[243px] h-[40px]">
-                  <div className="flex justify-between items-center">
-                    <div className="flex justify-between items-center gap-2 ">
-                      <div className="w-[10px] h-[10px] ml-[-18px] bg-[#6464f1] rounded-full"></div>
-                      <Text className="text-[14px] font-[500]">
-                        Beata@gmail.com
-                      </Text>
-                    </div>
-
-                    <Text>MAR-7</Text>
-                  </div>
-                  <Text className="text-left ">I've tried a lot and </Text>
-                </div>
-                <div className="w-[100%]  my-4 flex justify-between items-center">
-                  <div className="w-[83px] bg-[#222426] rounded-[20px] h-[20px] py-[3px] px-[8px]">
-                    <div className="w-[67px] h-[14px] gap-[4px] flex justify-center items-center">
-                      <div className="w-[12px] h-[12px] rounde-[50px] bg-[#57E0A6] rounded-full"></div>
-                      <Text className="text-[10px] text-left font-[800] text-[#57E0A6]">
-                        Interested
-                      </Text>
-                    </div>
-                  </div>
-                  <div className="py-[3px] px-[8px]  bg-[#222426] rounded-[20px] gap-[8px]">
-                    <div className="w-[100%] h-[14px] gap-2 flex justify-center items-center">
-                      <BsSend />
-                      <Text className="text-[10px] font-[800]">
-                        Campaign Name
-                      </Text>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="w-[255px] border-b-2 border-[#291c1c] h-[100px] py-[12px] px-[8px]">
-            <div className="w-[247px] h-[76px] p-[4px] gap-[8px]">
-              <div className="w-[243px] h-[68px] gap-[8px]">
-                <div className="w-[243px] h-[40px]">
-                  <div className="flex justify-between items-center">
-                    <div className="flex justify-between items-center gap-2 ">
-                      <div className="w-[10px] h-[10px] ml-[-18px] bg-[#6464f1] rounded-full"></div>
-                      <Text className="text-[14px] font-[500]">
-                        Beata@gmail.com
-                      </Text>
-                    </div>
-
-                    <Text>MAR-7</Text>
-                  </div>
-                  <Text className="text-left ">I've tried a lot and </Text>
-                </div>
-                <div className="w-[100%]  my-4 flex justify-between items-center">
-                  <div className="w-[83px] bg-[#222426] rounded-[20px] h-[20px] py-[3px] px-[8px]">
-                    <div className="w-[67px] h-[14px] gap-[4px] flex justify-center items-center">
-                      <div className="w-[12px] h-[12px] rounde-[50px] bg-[#57E0A6] rounded-full"></div>
-                      <Text className="text-[10px] text-left font-[800] text-[#57E0A6]">
-                        Interested
-                      </Text>
-                    </div>
-                  </div>
-                  <div className="py-[3px] px-[8px]  bg-[#222426] rounded-[20px] gap-[8px]">
-                    <div className="w-[100%] h-[14px] gap-2 flex justify-center items-center">
-                      <BsSend />
-                      <Text className="text-[10px] font-[800]">
-                        Campaign Name
-                      </Text>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="w-[255px] border-b-2 border-[#291c1c] h-[100px] py-[12px] px-[8px]">
-            <div className="w-[247px] h-[76px] p-[4px] gap-[8px]">
-              <div className="w-[243px] h-[68px] gap-[8px]">
-                <div className="w-[243px] h-[40px]">
-                  <div className="flex justify-between items-center">
-                    <div className="flex justify-between items-center gap-2 ">
-                      <div className="w-[10px] h-[10px] ml-[-18px] bg-[#6464f1] rounded-full"></div>
-                      <Text className="text-[14px] font-[500]">
-                        Beata@gmail.com
-                      </Text>
-                    </div>
-
-                    <Text>MAR-7</Text>
-                  </div>
-                  <Text className="text-left ">I've tried a lot and </Text>
-                </div>
-                <div className="w-[100%]  my-4 flex justify-between items-center">
-                  <div className="w-[83px] bg-[#222426] rounded-[20px] h-[20px] py-[3px] px-[8px]">
-                    <div className="w-[67px] h-[14px] gap-[4px] flex justify-center items-center">
-                      <div className="w-[12px] h-[12px] rounde-[50px] bg-[#57E0A6] rounded-full"></div>
-                      <Text className="text-[10px] text-left font-[800] text-[#57E0A6]">
-                        Interested
-                      </Text>
-                    </div>
-                  </div>
-                  <div className="py-[3px] px-[8px]  bg-[#222426] rounded-[20px] gap-[8px]">
-                    <div className="w-[100%] h-[14px] gap-2 flex justify-center items-center">
-                      <BsSend />
-                      <Text className="text-[10px] font-[800]">
-                        Campaign Name
-                      </Text>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="w-[255px] border-b-2 border-[#291c1c] h-[100px] py-[12px] px-[8px]">
-            <div className="w-[247px] h-[76px] p-[4px] gap-[8px]">
-              <div className="w-[243px] h-[68px] gap-[8px]">
-                <div className="w-[243px] h-[40px]">
-                  <div className="flex justify-between items-center">
-                    <div className="flex justify-between items-center gap-2 ">
-                      <div className="w-[10px] h-[10px] ml-[-18px] bg-[#6464f1] rounded-full"></div>
-                      <Text className="text-[14px] font-[500]">
-                        Beata@gmail.com
-                      </Text>
-                    </div>
-
-                    <Text>MAR-7</Text>
-                  </div>
-                  <Text className="text-left ">I've tried a lot and </Text>
-                </div>
-                <div className="w-[100%]  my-4 flex justify-between items-center">
-                  <div className="w-[83px] bg-[#222426] rounded-[20px] h-[20px] py-[3px] px-[8px]">
-                    <div className="w-[67px] h-[14px] gap-[4px] flex justify-center items-center">
-                      <div className="w-[12px] h-[12px] rounde-[50px] bg-[#57E0A6] rounded-full"></div>
-                      <Text className="text-[10px] text-left font-[800] text-[#57E0A6]">
-                        Interested
-                      </Text>
-                    </div>
-                  </div>
-                  <div className="py-[3px] px-[8px]  bg-[#222426] rounded-[20px] gap-[8px]">
-                    <div className="w-[100%] h-[14px] gap-2 flex justify-center items-center">
-                      <BsSend />
-                      <Text className="text-[10px] font-[800]">
-                        Campaign Name
-                      </Text>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        {
+          arr.map((el,ind)=>{
+               return <Emailcard key={ind} {...el}/>
+            })
+        }
+     
       </div>
 
       {/* --------------------- Mid Section------------------- */}
+      <div className="w-[100%]">
       <div className="w-[100%] h-[70px] flex justify-between items-center pr-[8px] pl-[17px] border-2 border-[#291c1c]">
         <div className=" gap-[8px]">
           <div className="">
@@ -313,6 +173,11 @@ function Mail() {
             </div>
           </div>
         </div>
+      </div>
+
+      {
+        <NewProduct/>
+      }
       </div>
 
       {/* --------------------End Section --------------------- */}
@@ -435,6 +300,7 @@ function Mail() {
           </div>
         </div>
       </div>
+     
     </div>
   );
 }
